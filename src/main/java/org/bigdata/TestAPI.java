@@ -89,6 +89,9 @@ public class TestAPI {
         descriptor.addFamily(hColumnDescriptor);
       }
       //根据对表的配置，创建表
+      //可设置预分区
+//      byte[][] splitKeys = 某个散列值函数
+//      hAdmin.createTable(tableDesc, splitKeys);
       admin.createTable(descriptor);
       System.out.println("表" + tableName + "创建成功！ ");
     }
@@ -215,7 +218,7 @@ public class TestAPI {
   }
 
   public static void main(String[] args) throws IOException {
-//    System.out.println(isTableExist("stu"));
+    System.out.println(isTableExist("demo:stu"));
 //    createNameSpace("demo");
 //    createTable("demo:stu", "info1", "info2");
 //    dropTable("stu");
@@ -223,7 +226,7 @@ public class TestAPI {
 //    addRowData("demo:stu","1001","info1","sex","male");
 //    getRow("demo:stu","1001");
 //    getRowQualifier("demo:stu","1001","info1","add");
-    getAllRows("demo:stu");
+//    getAllRows("demo:stu");
     close();
   }
 
